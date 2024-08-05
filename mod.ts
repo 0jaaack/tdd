@@ -1,9 +1,16 @@
 class Money {
+  protected amount: number;
+
+  constructor() {
+    this.amount = 0;
+  }
+
+  equals(money: Money) {
+    return this.amount === money.amount;
+  }
 }
 
 export class Dollar extends Money {
-  private amount: number;
-
   constructor(amount: number) {
     super();
     this.amount = amount;
@@ -11,10 +18,6 @@ export class Dollar extends Money {
 
   times(multiplier: number) {
     return new Dollar(this.amount * multiplier);
-  }
-
-  equals(doller: Dollar) {
-    return this.amount === doller.amount;
   }
 }
 

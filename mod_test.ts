@@ -1,4 +1,4 @@
-import { assertEquals } from "@std/assert";
+import { assert, assertEquals } from "@std/assert";
 import { Dollar } from "./mod.ts";
 
 Deno.test(function testMultiplication() {
@@ -7,4 +7,8 @@ Deno.test(function testMultiplication() {
   assertEquals(10, product.amount);
   product = five.times(3);
   assertEquals(15, product.amount);
+});
+
+Deno.test(function testEquality() {
+  assert(new Dollar(5).equals(new Dollar(5)));
 });

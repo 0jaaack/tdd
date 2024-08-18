@@ -21,18 +21,13 @@ export class Dollar extends Money {
   }
 }
 
-export class Franc {
-  private amount: number;
-
+export class Franc extends Money {
   constructor(amount: number) {
+    super();
     this.amount = amount;
   }
 
   times(multiplier: number) {
     return new Franc(this.amount * multiplier);
-  }
-
-  equals(franc: Franc) {
-    return this.amount === franc.amount;
   }
 }
